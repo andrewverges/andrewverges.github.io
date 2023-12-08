@@ -57,9 +57,9 @@ createPlatform(1200, 500, 200, 20);
     // Your collectable choices are 'database' 'diamond' 'grace' 'kennedi' 'max' and 'steve'; more can be added if you wish
     // example usage: createCollectable(type, x, y, gravity, bounce)
 
-createCollectable("grace", 650, 450);
-createCollectable("max", 450, 220);
-createCollectable("diamond", 1250, 450);
+createCollectable("soft", 650, 450);
+createCollectable("medium", 450, 220);
+createCollectable("hard", 1250, 450);
 
 
     // TODO 3
