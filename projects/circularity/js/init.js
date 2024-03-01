@@ -24,19 +24,19 @@ var init = function (window) {
         var circles = [];       //var to store all circles in on array
 
         // TODO 2 : Create a function that draws a circle 
-        function drawCircle(){
-            circle = draw.randomCircleInArea( canvas, true, true, "#999", 2);
-            physikz.addRandomVelocity(circle, canvas);
-            view.addChild(circle);
-            circles.push(circle);
+        function drawCircle(){                  //allows to draw shapes
+            circle = draw.randomCircleInArea( canvas, true, true, "#999", 2); // uses an existing draw function to draw a circle with a random size, color and location
+            physikz.addRandomVelocity(circle, canvas); //uses physikz library to provide motion and a random direction and velocity
+            view.addChild(circle);       //makes the circle a child of view so it appears on the screen
+            circles.push(circle);         // saves circle to an array of circles by pushing it to the end of the array
         }
 
         // TODO 3 / 7 : Call the drawCircle() function 
 
 
 
-        for (var loopsCompleted = 0; loopsCompleted < 100; loopsCompleted++){
-            drawCircle();
+        for (var loopsCompleted = 0; loopsCompleted < 200; loopsCompleted++){
+            drawCircle();                               // makes 200 circles by looping drawCircle() under the parameters in the for loop
         }
 
         ////////////////////////////////////////////////////////////
@@ -51,15 +51,15 @@ var init = function (window) {
         function update() {
             // TODO 4 : Update the circle's position //
            
-            //replaced in todo 8/9
+            //replaced in todo 8/9 with a for loop, using the code that was here before
             
             // TODO 5 / 10 : Call game.checkCirclePosition() on your circles.
-         //replaced in todo 8/9
+         //replaced in todo 8/9 with a for loop, using the code that was here before
 
             // TODO 8 / 9 : Iterate over the array
            for (var i = 0; i < circles.length; i++){
-            physikz.updatePosition(circles[i]);
-            game.checkCirclePosition(circles[i]);
+            physikz.updatePosition(circles[i]);         // makes a way to move all 100 circles and keep all 100 circles within the screen without calling them individually
+            game.checkCirclePosition(circles[i]);       //takes the place of the repetative function calls in todo 5 by putting it inside a for loop
            }
             
         }
@@ -77,13 +77,13 @@ var init = function (window) {
             }
             
             // TODO 6 : YOUR CODE STARTS HERE //////////////////////
-            if( circle.x < canvas.length){
+            if( circle.x < canvas.length){       //if the circle has gone past the left side of the screen then place it on the right
                 circle.x = 0;
             }
-            if(circle.y > canvas.width){
+            if(circle.y > canvas.width){    //if the circle has gone past the top side of the screen then place it on the bottom
                 circle.y = 0;
             }
-            if(circle.y < canvas.length){
+            if(circle.y < canvas.length){   //if the circle has gone past the bottom side of the screen then place it on the top
                 circle.y = 0;
             }
             // YOUR TODO 6 CODE ENDS HERE //////////////////////////
