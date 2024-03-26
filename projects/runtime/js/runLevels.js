@@ -53,6 +53,8 @@ var runLevels = function (window) {
         enemy.shrink();
       }
 
+      
+
     }
 
     function createReward(x, y){
@@ -74,6 +76,29 @@ var runLevels = function (window) {
       };
     }
 
+    function createMarker(x, y){
+      var marker = game.createGameItem("marker", 25);
+      var yellowSquare = draw.rect(50, 50, "yellow");
+      yellowSquare.x = -25;
+      yellowSquare.y = -25;
+      enemy.addChild(yellowSquare);
+      enemy.x = x;
+      enemy.y = y;
+      game.addGameItem(marker);
+      enemy.velocityX = -4;
+
+      enemy.onPlayerCollision = function () {
+        game.changeIntegrity(-20);
+      };
+
+      enemy.onProjectileCollision = function (){
+        game.increaseScore(100);
+        enemy.shrink();
+      }
+
+      
+
+    }
 //function calls
     createSawBlade(500, groundY - 110, 10);
     createSawBlade(700, groundY - 110, 20);
@@ -87,7 +112,7 @@ var runLevels = function (window) {
 
     createReward(1000, groundY - 90);
 
-
+    createMarker(2300, groundY -10);
 
 
     function startLevel() {
