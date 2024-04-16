@@ -43,7 +43,9 @@ var runLevels = function (window) {
       enemy.y = y;
       game.addGameItem(enemy);
       enemy.velocityX = -4;
+      enemy.rotationalVelocity = 0;
 
+      
       enemy.onPlayerCollision = function () {
         game.changeIntegrity(-20);
       };
@@ -74,6 +76,11 @@ var runLevels = function (window) {
         game.IncreaseScore(100);
         reward.shrink();
       };
+
+      reward.onProjectileCollision = function (){
+       // game.increaseScore(10);
+       // reward.shrink();
+      }
     }
 
     function createMarker(x, y){
@@ -110,7 +117,7 @@ var runLevels = function (window) {
     createEnemy(4800, groundY - 50);
     createEnemy(6800, groundY - 50);
 
-    createReward(1000, groundY - 90);
+    createReward(1000, groundY - 110);
 
     createMarker(2300, groundY -10);
 
