@@ -15,15 +15,19 @@ var makeLevelData = function (window) {
         number: 1,
         speed: -3,
         gameItems: [
-          { type: "sawblade", x: 400, y: groundY },
-          { type: "sawblade", x: 600, y: groundY },
-          { type: "sawblade", x: 900, y: groundY },
+          { type: "sawblade", x: 500, y: groundY - 110},
+          { type: "sawblade", x: 700, y: groundY - 110},
+          { type: "sawblade", x: 900, y: groundY - 110},
+          { type: "enemy", x: 800, y: groundY - 50},
+          { type: "enemy", x: 1800, y: groundY - 50},
+          { type: "reward", x: 1000, y: groundY - 110},
+          { type: "marker", x: 2300, y: groundY - 10},
         ],
       },
       {
         name: "Robot Rampage",
         number: 2,
-        speed: -3,
+        speed: -5,
         gameItems: [
           { type: "sawblade", x: 400, y: groundY },
           { type: "sawblade", x: 600, y: groundY },

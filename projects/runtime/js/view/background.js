@@ -76,11 +76,12 @@ var background = function (window) {
               }
             
             // TODO 3: Part 1 - Add a tree
-            tree = draw.bitmap("img/tree.png");
+            tree = draw.bitmap("img/minetree.png");
             tree.x = canvasWidth - 225;
-            tree.y = groundY - 225;
+            tree.y = groundY - 325;
             background.addChild(tree);
-
+            tree.scaleX = 0.5;
+            tree.scaleY = 0.5;
 
 
             
